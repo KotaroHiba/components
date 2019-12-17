@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // $(".dropdown__button").next().slideToggle();
+    $(".dropdown__button").next().slideToggle();
 
     $(".dropdown__button").click(function() {
         $(this).next().slideToggle();
