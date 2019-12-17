@@ -1,4 +1,44 @@
 .log-form
   width: 380px
+  display: flex
+  flex-direction: column
+  border: 2px solid black
+
+  &__container
+    margin: 0 30px
+
+  &__gender
+    display: flex
+    margin-bottom: 26px
+
+  &__link-login
+    display: grid
+    margin-top: 30px
+    grid-template-columns: 186+35px 99px
+    font-size: 14px
+    align-items: center
+
+  &__offer
+    display: flex
+    align-self: center
+    span
+      @include font(24px)
+    margin-bottom: 20px
+
+  &__toggle
+    margin-right: 10px
+
   &__button
     height: 44px
+
+  &__input-text-field
+    width: 320px
+    align-self: center
+    margin-bottom: 10px
+
+  &__title
+    font-size: 24px
+
+  &__subtitle
+    margin-top: 20px
+    margin-bottom: 5px
