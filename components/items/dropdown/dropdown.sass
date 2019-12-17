@@ -13,7 +13,7 @@
     font-weight: normal
 
 .dropdown
-    width: 266px
+    width: rem(266)
     
 .dropdown__list
     display: flex
@@ -93,12 +93,9 @@
         font-style: normal
         font-weight: normal
         font-size: 24px
-        line-height: 24px
-        flex-basis: 44px
+        line-height: rem(24)
+        flex-basis: rem(44)
         text-align: center
     > .dropdown__text
-        @include normal()
-        color: $color-dark-75
-        font-size: 14px
-        line-height: 24px
+        @include font($height: 24px, $weight: normal)
         padding-left: 15px
