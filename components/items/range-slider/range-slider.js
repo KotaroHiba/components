@@ -1,15 +1,21 @@
-$("#slider-range").slider({
+$(".range-slider__double").slider({
     range: true,
     min: 0,
-    max: 5000,
-    step: 1,
-    values: [540, 1020],
+    max: 15000,
+    step: 10,
+    values: [5000, 10000],
     slide: function (e, ui) {
-        var hours1 = ui.values[0];
-        var minutes1 = ui.values[0];
-        $('.slider-time').html(hours1 + ':' + minutes1);
-        var hours2 =ui.values[1];
-        var minutes2 = ui.values[1];
-        $('.slider-time2').html(hours2 + ':' + minutes2);
+        // Получаем значения с ползунка и переводим в строковой тип.
+        let from = ui.values[0].toString();
+        let to = ui.values[1].toString();
+
+        // Раделяем разряды цифр пробелами и приписываем валюту.
+        from = from.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '₽ - ';
+        to = to.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '₽';
+
+        // Находим родителя данного слайдера и изменям в нём значения.
+        let parent = $(this).parent('.range-slider');
+        parent.find('.range-slider__from').text(from);
+        parent.find('.range-slider__to').text(to);
     }
 });
