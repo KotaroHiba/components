@@ -1,0 +1,21 @@
+include ../../items/dropdown/dropdown
+
+mixin sale-block()
+    div.sale-block
+        div.sale-block__container
+            div.sale-block__title
+                div.sale-block__hotel-number N888 <span>люкс</span>
+                div.sale-block__sale-day <span>9990Р</span> в сутки
+            div.sale-block__form
+                div.sale-block__form-arrival
+                    h3 Прибытие
+                    +dropdown({})
+                div.sale-block__form-exit
+                    h3 выезд
+                    +dropdown({})
+                div.sale-block__guests
+                    h3 Гости
+                    +dropdown({})
+
++sale-block()
+

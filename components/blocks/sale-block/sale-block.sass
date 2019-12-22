@@ -1,0 +1,41 @@
+@function auto-mm($width, $toWidth: 0)
+  @if $toWidth != 0
+    @return minmax($width + px, percent($toWidth))
+  @return minmax($width + px, percent($width))
+
+.sale-block
+  width: percent(380)
+
+  flex-direction: column
+  border: 2px solid black
+  min-width: 320px
+  &__container
+    margin: 0 percent(30)
+
+  &__title
+    display: grid
+    grid-column-gap: percent(105)
+    grid-template-columns: auto-mm(110) auto-mm(105)
+
+
+
+  &__hotel-number
+    @include font(17px, bold, #1F2041)
+    font-family: Quicksand, sans-serif
+    text-transform: uppercase
+    span
+      @include font(15px, bold, $main-color)
+      font-size: rem(12)
+  &__sale-day
+    @include font(18px)
+    text-align: right
+    span
+      font-weight: bold
+  &__form
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: percent(20)
+
+
+  &__guests
+    grid-column: 1/4
