@@ -1,0 +1,16 @@
+include ../../items/input-checkbox/input-checkbox
+
+mixin checkbox-list(options)
+    .checkbox-list 
+        .checkbox-list__title
+            h3= options.title
+            .checkbox-list__arror keyboard_arrow_down
+        +input-checkbox({
+            id: options.arrayId,
+            info: options.arrayInfo
+        })
++checkbox-list({
+    title: 'Дополнительные удобства',
+    arrayId: [1,2,3,4,5],
+    arrayInfo: ["Завтрак", "Письменный стол", "Кроватка", "Телевизор", "Шампунь"]
+})
