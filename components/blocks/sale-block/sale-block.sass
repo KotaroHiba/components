@@ -10,7 +10,8 @@
   border: 2px solid black
   min-width: 320px
   &__container
-    margin: 0 percent(30)
+    margin: 30px percent(30)
+
 
   &__title
     display: grid
@@ -39,3 +40,31 @@
 
   &__guests
     grid-column: 1/4
+
+  &__calc
+    margin-top: 20px
+    display: grid
+    grid-template-columns: auto-mm(214) auto-mm(57)
+    grid-column-gap: percent(49)
+    @include font(24px)
+    span:nth-child(2n)
+      text-align: right
+  &__total
+    display: grid
+    grid-template-columns: auto-mm(59) auto-mm(182) auto-mm(68)
+    grid-column-gap: percent(5)
+    font-family: Quicksand, sans-serif
+    font-style: normal
+    font-weight: bold
+    font-size: rem(19)
+    line-height: 24px
+    margin-top: 30px
+    &-points
+      background: url(img/points.svg)  repeat-x bottom
+
+
+  &__button
+    margin-top: 20px
+    text-transform: uppercase
+    height: 44px
+
