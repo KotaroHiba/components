@@ -1,11 +1,18 @@
 include ../../items/dropdown/dropdown
 include ../../items/button/button
+include ../../items/number-cost/number-cost
+
 mixin sale-block()
     div.sale-block
         div.sale-block__container
             div.sale-block__title
-                div.sale-block__hotel-number N888 <span>люкс</span>
-                div.sale-block__sale-day <span>9990Р</span> в сутки
+                +number-cost({
+                    number: 801,
+                    lux: true,
+                    sale: '9 000'
+                })
+                //div.sale-block__hotel-number N888 <span>люкс</span>
+                //div.sale-block__sale-day <span>9990Р</span> в сутки
             div.sale-block__form
                 //div.sale-block__form-arrival
                 //    h3 Прибытие
