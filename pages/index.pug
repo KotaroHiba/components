@@ -1,3 +1,6 @@
 extends base/base.pug
+
 block content
-    | Короче тут будет какой то контент
+    +log-page({
+        type: 'register'
+    })
