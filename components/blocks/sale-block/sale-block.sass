@@ -19,7 +19,7 @@
       &_long
         grid-column: 1 / 3
   &__calc
-
+    margin-top: 20px
     display: grid
     //grid-template-columns: auto-mm(214) auto-mm(20) auto-mm(58)
     grid-template-columns: minmax(percent(214), 3fr) minmax(percent(20), 20px) minmax(percent(58), 1fr)
@@ -29,5 +29,18 @@
       &:nth-child(3n)
         justify-self: end
 
-
+  &__sum
+    display: grid
+    grid-template-columns: auto-mm(59) auto-mm(182-10) auto-mm(69)
+    grid-column-gap: percent(5)
+    margin-top: 30px
+    span:nth-child(2)
+      background: url("img/points.svg") repeat-x left bottom
+    font-family: Quicksand, sans-serif
+    font-weight: bold
+    font-size: rem(19)
+    line-height: 24px
+  &__button
+    margin-top: 20px
+    height: 44px
 
