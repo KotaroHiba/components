@@ -1,2 +1,8 @@
+include ../dropdown/dropdown
+include ../button/button
 .form 
-    block content
+    h1 Найдём номера под ваши пожелания
+    input(type="text", name="")
+    h3 Гости
+    +dropdown(true)
+    +button({invert : false, arrow: true, text: 'Подобрать номер'})
