@@ -1,0 +1,12 @@
+include ../../items/dropdown/dropdown
+include ../../items/button/button
+mixin form()
+    .form 
+        h1 Найдём номера под ваши пожелания
+        h3 Прибытие
+        input(type="text", name="")
+        h3 Гости
+        +dropdown({vestNumbers: true})
+        +button({invert : false, arrow: true, text: 'Подобрать номер'})
+
++form()
