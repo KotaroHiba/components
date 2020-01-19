@@ -1,5 +1,8 @@
 include ../../items/dropdown/dropdown
 include ../../items/button/button
+// TODO: добавить коментарии
+    изменить миксин
+    добавить календарь 
 mixin form()
     .form 
         h1 Найдём номера под ваши пожелания
@@ -9,4 +12,3 @@ mixin form()
         +dropdown({vestNumbers: true})
         +button({invert : false, arrow: true, text: 'Подобрать номер'})
 
-+form()
