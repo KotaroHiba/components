@@ -1,8 +1,24 @@
+//-                        Options                  |               Classes
+   ------------------------------ ---------------------------------------------------------------------------
+      number - (int) номер команты                  |   element - элементом какого блока является
+      lux - (bool = false) приставка к номеру       |   addAnyClass - добавление свободных классов
+      sale - (string) цена за комнату в сутки       |   mode - свободный модификатор
+                                                    |
+      star(bool = false) установка оценки           |
+                                                    |
+
 include ../rate-button/rate-button
 mixin number-cost(options)
+    if !options
+        - var options = {}
+    -
+        var classes = ''
+        classes += options.element ? ' ' + options.element + '__number-cost': ''
+        classes += options.mode ? ' '  + 'number-cost_' + options.mode: ''
+        classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
     - var number = '№ ' + options.number
     - var sale = options.sale + 'Р в сутки'
-    div.number-cost
+    div.number-cost(class=classes)
         div.number-cost__number= number
             if options.lux === true
                 span  люкс
