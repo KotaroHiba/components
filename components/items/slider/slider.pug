@@ -7,7 +7,9 @@
                                    |
                                    |
     
-
+// TODO: @misha в гуглхроме 79.0.3945.117 и 79.0.3945.130 высота картинки почему-то 0. В мозиле работает. 
+    Стрелки под углом. Скорее всего из-за тега i (курсив). 
+    Удалить из папки картинку со стрелкой.
 
 
 mixin slider(options)
@@ -40,10 +42,10 @@ mixin slider(options)
                 i.material-icons keyboard_arrow_right
 
 
-//-
-    div.table
-        +slider({
-            element: 'table',
-            path: 'img/',
-            slides: ['1.svg', '2.svg', '3.jpg', '2.svg']
-        })
+
+//- div.table
+//-     +slider({
+//-         element: 'table',
+//-         path: 'img/',
+//-         slides: ['1.svg', '2.svg', '3.jpg', '2.svg']
+//-     })

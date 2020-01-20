@@ -6,7 +6,9 @@
     sales - (str) - диапазон цены  | element - элементом какого блока является
                                    | addAnyClass - добавление свободных классов
                                    | mode - модификатор
-// TODO @Kotaro сделать динамический слайдер с ценами
+// TODO @Kotaro сделать динамический слайдер с ценами | @mishа уже, вроде как. 
+    @misha Кот ты добавил свойство sales или я не коментил? Если первое, то там и должен быть такой диапазон, т.к. значения задаёт в js файле. А здесь не более, чем надпись. 
+
 mixin range-slider(options)
     if !options
         -var options = {}
@@ -23,3 +25,5 @@ mixin range-slider(options)
             h3 Диапозон цены
             h3.range-slider__range= options.sales
         .range-slider__double
+
+//- +range-slider()

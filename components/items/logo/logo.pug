@@ -5,6 +5,9 @@
                                             | option.addAnyClass - свободное добавление классов к блоку
                                             |
                                             |
+// TODO: @misha Нужно ли widthText. И если да, то переименовать ширину текста. 
+    Указать widthText как обязательные или нет элемент.
+    js файл пустой.
 mixin logo(options)
     if !options
         - options = {}
@@ -20,4 +23,7 @@ mixin logo(options)
             div.logo__text
                |Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
+//- +logo({
+//-     widthText: true
+//- })
 

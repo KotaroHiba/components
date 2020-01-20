@@ -4,7 +4,14 @@
     arrow(bool)  - cтрелка         | addAnyClass - добавление свободных классов
     text - текст кнопки            | mode - модификатор
                                    |
-
+// TODO: @misha Текст кнопки при invert: true черный .75, а не #BC9CFF.
+    submit Что это? 
+    Закоменченый пример и миксин различаются.
+    class & arrow ни на что не влияют. Хотя второе видно в консоли.
+    UPD: arrow при inver false работает. 
+    form - зачем данный тег нужен?
+    Файл js пустой.
+    Коментари мало информативны. Если смотреть на миксин, то там больше позиций, чем описанных.
 
 mixin button(options)
     if !options
@@ -22,4 +29,10 @@ mixin button(options)
                 tabindex = options.tabindex || false
             )= options.text || 'Button'
 
-//+button({invert : false, element: 'footer', submit: true, class: 'button_arrow', text: 'Кнопка'})
+//- +button({
+//-     invert : false, 
+//-     element: 'footer', 
+//-     submit: false, 
+//-     arrow: true, 
+//-     text: 'Кнопка'
+//- })
