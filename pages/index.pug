@@ -1,3 +1,8 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-include ../components/items/pagination/pagination
 
+include ../components/items/bullet-list/bullet-list
+- const pr = self.htmlWebpackPlugin.options.testes;
+p= pr
+ - const test = require("./functions");
+ - name = test.say('У меня получилось использовать JS функцию в Pug')
+p= name
