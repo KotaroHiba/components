@@ -6,13 +6,19 @@
     slides(array) - имена картинок |   mode - модификатор
                                    |
                                    |
-    
+
 
 
 
 mixin slider(options)
     if !options
-        - var options = {}
+        -
+            options = {
+            element: 'table',
+            path: 'img/',
+            slides: ['1.svg', '2.svg', '3.jpg', '2.svg']
+            }
+        include description
     -
         style = options.slides.length < 2 ? 'display:none' : ''
     div.slider(class=pf.addClasses('slider', options))

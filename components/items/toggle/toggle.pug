@@ -4,13 +4,13 @@
                                        | addAnyClass - добавление свободных классов
                                        | mode - модификатор
 
-
-
+//- создает маленький, стилизованный переключатель
+// TODO @Kotaro а как он будет работать?
 
 mixin toggle(options)
     if !options
-        -var options = {}
-    -
-        classes += options.state ? ' toggle-on' : ''
+        -
+            options = {}
+    - classes += options.state ? ' toggle-on' : ''
     .toggle(class=pf.addClasses('toggle', options) class= classes)
 

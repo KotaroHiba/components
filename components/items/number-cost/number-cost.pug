@@ -10,7 +10,12 @@
 include ../rate-button/rate-button
 mixin number-cost(options)
     if !options
-        - var options = {}
+        -
+            options = {
+                number: 125,
+                sale: 1200
+            }
+        include description
     - var number = '№ ' + options.number
     - var sale = options.sale + 'Р в сутки'
     div.number-cost(class=pf.addClasses('number-cost', options))
