@@ -1,5 +1,4 @@
-
-$(function(){
+$(document).ready(function(){
     $('.toggle').click(function (e, changeState) {
 
         if (changeState === undefined) {
