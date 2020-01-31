@@ -13,7 +13,6 @@ mixin input-checkbox(options)
   -
     var classes = 'input-checkbox'
     classes += options.state ? ' input-checkbox_state_' + options.state : ''
-
   div(class=classes class= pf.addClasses('input-checkbox', options))
     ul.input-checkbox__conteiner
     -for (var x = 0; x < options.id.length; x++)
