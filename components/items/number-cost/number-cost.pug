@@ -10,15 +10,15 @@
 include ../rate-button/rate-button
 mixin number-cost(options)
     if !options
-        - var options = {}
-    -
-        var classes = ''
-        classes += options.element ? ' ' + options.element + '__number-cost': ''
-        classes += options.mode ? ' '  + 'number-cost_' + options.mode: ''
-        classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
+        -
+            options = {
+                number: 125,
+                sale: 1200
+            }
+        include description
     - var number = '№ ' + options.number
     - var sale = options.sale + 'Р в сутки'
-    div.number-cost(class=classes)
+    div.number-cost(class=pf.addClasses('number-cost', options))
         div.number-cost__number= number
             if options.lux === true
                 span  люкс

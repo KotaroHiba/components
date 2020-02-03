@@ -1,3 +1,9 @@
+//-           Options                        |               Classes
+    ---------------------------------------------------------------------------
+    options.type                             | options.addAnyClass - добавить любой класс
+                                             | options.element - класс элемента
+                                             | options.mode - модификатор блока
+                                             | options.state - модификатор состояния
 include ../../items/button/button
 include ../../items/input-text-field/input-text-field
 include ../../items/input-gender/input-gender
@@ -7,18 +13,14 @@ mixin log-form(options)
     - var blockName = 'log-form'
     if !options
         - options = {}
-    -
-        var classes = ''
-        classes += options.element ? ' ' + options.element + '__log-form': ''
-        classes += options.mode ? ' '  + 'log-form_' + options.mode: ''
-        classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
+        | Создает поле формы или поле регистра если type = 'register'
 
     if options.type === 'register'
        - var title = 'Регистрация аккаунта'
     else
         - var title  = 'Войти'
 
-    div.log-form(class=classes)
+    div.log-form(class=pf.addClasses(blockName, options))
         div.log-form__container
             h1.log-form__title= title
             if options.type === 'register'
@@ -83,5 +85,4 @@ mixin log-form(options)
                     text: 'Войти',
                     invert: true
                 })
-
 

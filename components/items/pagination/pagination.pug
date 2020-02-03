@@ -3,8 +3,11 @@
     Т.к. это только макет, то функционала нет. 
     Параметров нет.
     Вызов: +pagination
-mixin pagination
-    .pagination
+// TODO @Kotaro полупустой миксин ...??? Доделать
+mixin pagination(options)
+    if !options
+        - options = {}
+    .pagination(class=pf.addClasses('pagination', options))
         .pagination__number.active 1
         .pagination__number 2
         .pagination__number 3

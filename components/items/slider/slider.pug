@@ -6,20 +6,22 @@
     slides(array) - имена картинок |   mode - модификатор
                                    |
                                    |
-    
+
 
 
 
 mixin slider(options)
     if !options
-        - var options = {}
+        -
+            options = {
+            element: 'table',
+            path: 'img/',
+            slides: ['1.svg', '2.svg', '3.jpg', '2.svg']
+            }
+        include description
     -
-        var classes = ''
-        classes += options.element ? ' ' + options.element + '__slider': ''
-        classes += options.mode ? ' '  + 'slider_' + options.mode: ''
-        classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
         style = options.slides.length < 2 ? 'display:none' : ''
-    div.slider(class=classes)
+    div.slider(class=pf.addClasses('slider', options))
         div.slider__viewport
             div.slider__prev(style=style)
                 i.material-icons keyboard_arrow_left
@@ -41,7 +43,7 @@ mixin slider(options)
 
 
 
-div.table
+//-
     +slider({
         element: 'table',
         path: 'img/',
