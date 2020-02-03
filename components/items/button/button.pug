@@ -14,10 +14,6 @@ mixin button(options)
         classes += options.arrow ? ' button_arrow' : ''
 
     .button(class=classes class=pf.addClasses('button', options))
-        form.button__form(action=options.href)
-            button.button__element(
-                type = options.submit ? 'submit' : false,
-                tabindex = options.tabindex || false
-            )= options.text || 'Button'
+        button.button__element= options.text || 'Button'
 
 //+button({invert : false, element: 'footer', submit: true, class: 'button_arrow', text: 'Кнопка'})
