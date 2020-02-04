@@ -1,9 +1,11 @@
 include ../../items/logo/logo
 include ../../items/footer-list/footer-list
 include ../../items/input-text-field/input-text-field
-mixin footer()
-    footer.footer
-      +logo({element: "footer", withText: true})
+mixin footer(options)
+    if !options
+        - options = {}
+    footer.footer(class=pf.addClasses('footer', options))
+      +logo({element: "footer", widthText: true})
 
       +footer-list({
           element: "footer",

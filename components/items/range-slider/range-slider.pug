@@ -1,8 +1,18 @@
 //- 
     Создает ползунок с двумя кружками. 
     Не принимает никаких входных аргументво, т.к. заданны стандартные по макету.
-mixin range-slider()
-    .range-slider(class=classes)
+
+//-           Options              |               Classes
+    ---------------------------------------------------------------------------
+                                   | element - элементом какого блока является
+                                   | addAnyClass - добавление свободных классов
+                                   | mode - модификатор
+// TODO @Kotaro сделать динамический слайдер с ценами
+mixin range-slider(options)
+    if !options
+        -var options = {}    
+
+    .range-slider(class=pf.addClasses('range-slider', options))
         .range-slider__text
             h3 Диапозон цены
             h3.range-slider__range= '5 000₽ - 10 000₽'
