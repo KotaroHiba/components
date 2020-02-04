@@ -4,6 +4,9 @@
         (text, drop - стрелка, link - ссыль)| option.mode - модификатор данного блока
                                             | option.addAnyClass - свободное добавление классов к блоку
 
+// TODO @Kotaro сделать автоматическое создание nav если не переданны аргументы
+        @Misha: В адаптиве в хедаре всё плохо.
+
 mixin nav(options)
     if !options
         -
@@ -23,9 +26,8 @@ mixin nav(options)
             if !text.link
                 - text.link = '#'
             if text.drop
-                a.nav__link.nav__link_drop(href=text.link class=text.drop)= text.text
-                    img(src="img/arrow_drop.svg")
+                a.nav__link.nav_drop(href=text.link)= text.text
+                    .nav_arrow keyboard_arrow_down
 
             else
                 a.nav__link(href=text.link)= text.text
-

@@ -19,19 +19,17 @@ mixin feedback-record(options)
             }
     .feedback-record(class= pf.addClasses('feedback-record', options))
         .feedback-record__top
-            script
-                import '#{options.image}'
             img(src=options.image, alt=options.author)
-            .feedback-record__title
-                .feedback-record_author= options.author
+            .feedback-record__author
+                .feedback-record__title= options.author
                 .simple-text= options.data
         .feedback-record__bottom
-            +like-button({
-                count: options.count,
-                state: options.state,
-                element: 'feedback-record'
-            })
+            .feedback-record__like
+                +like-button({
+                    count: options.count,
+                    state: options.state,
+                    element: 'feedback-record'
+                })
             .simple-text= options.text
 
 
-+feedback-record()

@@ -20,9 +20,8 @@ mixin checkbox-list(options)
         .checkbox-list__title
             h3= options.title
             .checkbox-list__arror keyboard_arrow_down
-        +input-checkbox({
-                id: options.arrayId,
-                info: options.arrayInfo
-            })
-
+        ul
+            each element in options.arrayInfo
+                li 
+                    +input-checkbox({info: element})
 

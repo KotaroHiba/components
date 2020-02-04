@@ -14,6 +14,11 @@ mixin button(options)
         classes += options.arrow ? ' button_arrow' : ''
 
     .button(class=classes class=pf.addClasses('button', options))
+
         button.button__element= options.text || 'Button'
 
-//+button({invert : false, element: 'footer', submit: true, class: 'button_arrow', text: 'Кнопка'})
+//- +button({
+//-     invert : true,  
+//-     arrow: true,
+//-     text: 'Кнопка'
+//- })

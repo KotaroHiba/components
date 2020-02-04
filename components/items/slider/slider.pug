@@ -23,8 +23,7 @@ mixin slider(options)
         style = options.slides.length < 2 ? 'display:none' : ''
     div.slider(class=pf.addClasses('slider', options))
         div.slider__viewport
-            div.slider__prev(style=style)
-                i.material-icons keyboard_arrow_left
+            div.slider__prev(style=style) keyboard_arrow_left
             for slide, index in options.slides
                 if index === 0
                     div.slider-item.active
@@ -38,10 +37,7 @@ mixin slider(options)
                         div.slider__target-circle.active
                     else
                         div.slider__target-circle
-            div.slider__next(style=style)
-                i.material-icons keyboard_arrow_right
-
-
+            div.slider__next(style=style) keyboard_arrow_right
 
 //-
     +slider({
@@ -49,3 +45,4 @@ mixin slider(options)
         path: 'img/',
         slides: ['1.svg', '2.svg', '3.jpg', '2.svg']
     })
+
