@@ -8,7 +8,7 @@
     text-transform: uppercase
 
 .dropdown
-    width: rem(320)
+    min-width: rem(320)
     
 .dropdown__list
     display: flex
@@ -24,7 +24,7 @@
         margin: rem(11) 0 0 0
         display: grid
         grid-auto-flow: row
-        grid-template-columns: rem(221) rem(30) rem(32) rem(30)
+        grid-template-columns: 1fr rem(30) rem(32) rem(30)
         align-items: center
         > .dropdown__name, .dropdown__count
             @include bold()
