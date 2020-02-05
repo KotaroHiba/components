@@ -9,7 +9,7 @@
 
 
 
-include ../../items/number-cost/number-cost
+include ../number-cost/number-cost
 include ../../items/slider/slider
 mixin hotel-number-card(options)
     if !options
@@ -40,6 +40,6 @@ mixin hotel-number-card(options)
             number: options.infoRoom.number,
             sale: options.infoRoom.sale,
             lux: options.infoRoom.lux,
-            star: true 
+            star: true
         })
 
