@@ -1,5 +1,6 @@
 include ../../items/dropdown/dropdown
 include ../../items/button/button
+include ../../items/calendar/calendar
 // TODO: добавить коментарии
     изменить миксин
     добавить календарь 
@@ -9,8 +10,13 @@ mixin form()
     .form 
         h1 Найдём номера под ваши пожелания
         h3 Прибытие
-        input(type="text", name="")
+        +calendar({twoInputs: true})
         h3 Гости
         +dropdown({vestNumbers: true})
-        +button({invert : false, arrow: true, text: 'Подобрать номер'})
+        +button({
+            invert : false, 
+            arrow: true, 
+            text: 'Подобрать номер', 
+            addAnyClass: 'form__button'
+        })
 
