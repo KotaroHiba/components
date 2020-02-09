@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    $(".dropdown__button").next().slideToggle();
 
+    // Сборка/выпадение списка.
     $(".dropdown__button").click(function() {
-        $(this).next().slideToggle();
+        $(this).next().toggleClass("dropdown__none");;
     });
 
     $(".minus").click(function() {

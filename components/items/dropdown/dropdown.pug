@@ -30,7 +30,7 @@ mixin dropdown(options)
         .dropdown__button
             .dropdown__text= text
             .dropdown__arrow keyboard_arrow_down
-        .dropdown__list
+        .dropdown__list.dropdown__none
             - for (var i = 0; i < 3; i++)
                 .dropdown__item 
                     .dropdown__name= name[i]
