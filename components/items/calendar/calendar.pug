@@ -32,22 +32,26 @@ mixin calendar(options)
         id= "daterange"
         placeholder= options.placeholder
       )
-      p.calendar__container
-        input(
-          name='check_in_date',
-          type='text',
-          class="calendar__input input-calendar_entry"
-          id= "check_in_date"
-          placeholder= options.placeholder
-        )
-      p.calendar__container
-        input(
-          name='check_out_date',
-          type='text',
-          class="calendar__input input-calendar_departure"
-          id= "check_out_date"
-          placeholder= options.placeholder
-        )
+      .calendar__block
+        h3 Прибытие
+        .calendar__container
+          input(
+            name='check_in_date',
+            type='text',
+            class="calendar__input input-calendar_entry"
+            id= "check_in_date"
+            placeholder= options.placeholder
+          )
+      .calendar__block
+        h3 Выезд
+        p.calendar__container
+          input(
+            name='check_out_date',
+            type='text',
+            class="calendar__input input-calendar_departure"
+            id= "check_out_date"
+            placeholder= options.placeholder
+          )
   else
     div(class= classes)
       input(
