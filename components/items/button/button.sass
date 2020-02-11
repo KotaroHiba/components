@@ -1,11 +1,9 @@
-
 .button
-    position: relative
+  position: relative
 
     &__element
         border-radius: 22px
         position: relative
-        color: #fff
         width: 100%
         height: 100%
         border: solid 2px transparent
@@ -15,29 +13,35 @@
         font-family: Montserrat
         font-weight: bold
         text-transform: uppercase
-        transition: 2s
         font-size: 12px
 
-        &:hover
-            opacity: .5
+    &:hover
+      opacity: .5
 
-    &.button_inverted &__element
-        box-shadow: 2px 1000px 1px #fff inset
-        color: $main-color
-
-    &.button_inverted
-        box-shadow: 2px 1000px 1px #fff inset
-        color: $color-dark-75
+  &.button_inverted &__element
+    box-shadow: 2px 1000px 1px #fff inset
+    color: $color-dark-75
 
 
-    &.button_arrow
-        &::after
-            content: "arrow_forward"
-            right: 10px
-            font-family: Material Icons
-            font-style: normal
-            font-weight: normal
-            // Переопределять при необходимости 1 свойства ниже, но это не точно.
-            font-size: rem(24)            
-            color: $white
-            position: absolute
+  &.button_arrow &__element
+    &::after
+      content: ""
+      right: 15px
+
+      position: absolute
+      width: 18px
+      height: 18px
+      background-image: url("img/arrow.svg")
+
+//TODO сделать стрелку через шрифт
+  &.button_arrow
+    &::after
+      content: "arrow_forward"
+      right: 10px
+      font-family: Material Icons
+      font-style: normal
+      font-weight: normal
+      // Переопределять при необходимости 1 свойства ниже, но это не точно.
+      font-size: rem(24)
+      color: $white
+      position: absolute
