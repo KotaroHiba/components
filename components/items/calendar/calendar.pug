@@ -13,7 +13,7 @@ mixin calendar(options)
   if !options
     -options= {}
   if !options.placeholder
-    -options.placeholder = "Дата"
+    -options.placeholder = "ДД.ММ.ГГГГ"
   -
     var classes = 'calendar'
     classes += !options.twoInputs ? ' ' + "calendar_singleInput" : ''
