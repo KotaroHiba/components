@@ -385,12 +385,9 @@
 .calendar
   position: relative
   min-width: 320px
-  height: 65px
   display: flex
   flex-direction: row
-  // flex-wrap: nowrap
   justify-content: space-between
-  box-sizing: border-box
   
   &_singleInput
     box-sizing: border-box
@@ -419,8 +416,6 @@
     position: relative
     box-sizing: border-box
     height: 44px
-    flex-basis: percent(150)
-    min-width: 95px
     margin: 0
 
     &::after
@@ -438,7 +433,9 @@
       height: 8px
       box-sizing: border-box
 
+  
   &__input
+    box-sizing: border-box
     border: 1px solid rgba(31, 32, 65, 0.25)
     border-radius: 4px
     color: rgba(31, 32, 65, 0.75)
@@ -447,7 +444,6 @@
     font-family: Montserrat, sans-serif
     width: 100%
     height: 100%
-    min-width: 95px
 
     &::placeholder
       font-size: 14px
@@ -465,31 +461,23 @@
   > .calendar__block
     display: flex
     flex-flow: column nowrap
+    > h3 
+      margin: 0 0 5px 0
+      padding: 0
+
   
-  > h3 
-    margin: 0
-    padding: 0
-
-
 .input-calendar
-  box-sizing: border-box
-  
+  box-sizing: content-box  
 
   &_hidden
     z-index: 1
     opacity: 0
     position: absolute
-    width: 100%
-    height: 100%
-    min-width: 95px
-
-  &_visible
-    width: 100%
-    height: 100%
-    min-width: 95px
-
 
 
   &_entry, &_departure
+    margin: 0
+    padding: 0
     width: 150px
-    text-align: center
+    text-indent: 15px
+    text-transform: uppercase
