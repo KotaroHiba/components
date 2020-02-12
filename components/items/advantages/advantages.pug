@@ -4,9 +4,7 @@
     options.heading - заголовок                | options.element - класс элемента
     options.text - текст                       | options.mode - модификатор блока
     options.alt - альтернативный текст для img | options.state - модификатор состояния
-
 // TODO @Kotaro нужно примерно такое визуальное описание для сложных блоков, глупо но понятно
-
 mixin advantages(options)
     if !options
         -options= {}
@@ -15,6 +13,7 @@ mixin advantages(options)
     -
         var classes = 'advantages'
     classes += options.state ? ' advantages_state_' + options.state : ''
+    classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
 
 
     div(class=classes class=pf.addClasses('advantages', options))
