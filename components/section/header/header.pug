@@ -1,10 +1,8 @@
 include ../../items/button/button
 include ../../items/nav/nav
 include ../../items/logo/logo
-mixin header(options)
-    if !options
-        - options = {}
-    header.header(class = pf.addClasses('header', options))
+mixin header()
+    header.header
       +logo({element: "header"})
 
       .open
