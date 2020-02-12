@@ -1,14 +1,15 @@
-//- Options
-    cards (arr) - массив с объектами hotel-number-curd
-
 include ../../blocks/hotel-number-card/hotel-number-card
 
 mixin rooms-list(options)
     if !options
         - var options = {}
-
+    -
+        var classes = ''
+        classes += options.element ? ' ' + options.element + '__rooms-list': ''
+        classes += options.mode ? ' '  + 'rooms-list_' + options.mode: ''
+        classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
     - var blockName = 'rooms-list'
-    div.rooms-list(class= pf.addClasses('rooms-list', options))
+    div.rooms-list(class=classes)
         for cards in options.cards
             +hotel-number-card({
                 element: blockName,
