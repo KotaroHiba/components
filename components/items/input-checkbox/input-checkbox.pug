@@ -13,17 +13,17 @@ mixin input-checkbox(options)
     if !options.info
         p Указание info является обязательным для input-checkbox
     -
-    var classes = 'input-checkbox'    
-    
+    var classes = 'input-checkbox'
+
     div(class=classes class= pf.addClasses('input-checkbox', options))
         .input-checkbox__checkbox
-        .input-checkbox__signature       
+        .input-checkbox__signature
             span(class= options.description ? "input-checkbox__text_bold": "input-checkbox__text")= options.info
             if options.description
                 .input-checkbox__description= options.description
 
 
-//- +input-checkbox({        
+//- +input-checkbox({
 //-     description: 'На 1 этаже вас встретит специалист и проводит до номера.',
-//-     info: 'Помощник для инвалидов'    
+//-     info: 'Помощник для инвалидов'
 //- })

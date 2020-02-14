@@ -7,18 +7,10 @@
     &__top
         align-items: center
         margin: 0 0 10px 0
-        > .feedback-record__author
+        > .feedback-record__title
             padding: 0 0 0 10px
-            > .feedback-record__title, .simple-text
-                font-family: Montserrat
-                font-style: normal
-                font-weight: normal
-                font-size: 14px
-                line-height: 24px
-                color: $color-dark-75
-            > .feedback-record__title
-                font-weight: bold
-            
+            > .feedback-record__author
+                @include font(21px, bold)
 
         img            
             border: 2px solid #FFFFFF
@@ -33,9 +25,4 @@
         > .simple-text
             padding: 0 0 0 10px
             width: 653px
-            font-family: Montserrat
-            font-style: normal
-            font-weight: normal
-            font-size: 14px
-            line-height: 24px
-            color: $color-dark-75
+

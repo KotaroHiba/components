@@ -9,24 +9,20 @@
 
 
 
-include ../number-cost/number-cost
+include ../../items/number-cost/number-cost
 include ../../items/slider/slider
 mixin hotel-number-card(options)
     if !options
-        -
-            options = {
-                infoRoom: {
-                    number: 801,
-                    lux: true,
-                    sale: '10000'
-                },
-                path: 'img/',
-                slides: ['1.svg']
-            }
-        include description
+        - var options = {}
+    -
+        var classes = ''
+        classes += options.element ? ' ' + options.element + '__hotel-number-card': ''
+        classes += options.mode ? ' '  + 'hotel-number-card_' + options.mode: ''
+        classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
+
     - var paths = 'img/hotel-cards-photo/' + options.infoRoom.number + '/'
     - var blockName = 'hotel-number-card'
-    div.hotel-number-card(class=pf.addClasses('hotel-number-card', options))
+    div.hotel-number-card(class=classes)
         +slider({
             element: blockName,
             path: paths,
@@ -40,6 +36,6 @@ mixin hotel-number-card(options)
             number: options.infoRoom.number,
             sale: options.infoRoom.sale,
             lux: options.infoRoom.lux,
-            star: true
+            star: true 
         })
 
