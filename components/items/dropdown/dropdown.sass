@@ -8,7 +8,7 @@
     text-transform: uppercase
 
 .dropdown
-    width: rem(259)
+    min-width: rem(320)
     
 .dropdown__list
     display: flex
@@ -19,11 +19,13 @@
     border: 1px solid rgba(31, 32, 65, 0.5)
     border-bottom-left-radius: 2px
     border-bottom-right-radius: 2px
+    padding-bottom: rem(8)
     > .dropdown__item
         margin: rem(11) 0 0 0
+        padding: rem(5) rem(14) 0 0
         display: grid
         grid-auto-flow: row
-        grid-template-columns: rem(167) rem(30) rem(32) rem(30)
+        grid-template-columns: 1fr rem(30) rem(32) rem(30)
         align-items: center
         > .dropdown__name, .dropdown__count
             @include bold()
@@ -55,8 +57,8 @@
         grid-template-columns: 60% 40%
         grid-template-rows: 1fr
         align-items: center
-        margin: rem(11) 0 0 0
-        padding: 0 0 rem(13) rem(14)
+        margin: rem(20) 0 0 0
+        padding: 0 0 rem(5) rem(14)
         > .dropdown__clear, .dropdown__apply
             @include bold()
         > .dropdown__clear
@@ -67,14 +69,8 @@
             color: $main-color
             text-align: center
             cursor: pointer
-            
-             
-            
-
-            
-
-
-
+          
+          
 .dropdown__button
     background: #FFFFFF
     height: rem(44)
@@ -97,5 +93,5 @@
         flex-basis: rem(44)
         text-align: center
     > .dropdown__text
-        @include font($height: 24, $weight: normal)
+        @include font($height: rem(24), $weight: normal)
         padding-left: 15px

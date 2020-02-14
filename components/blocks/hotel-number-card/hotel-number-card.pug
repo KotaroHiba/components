@@ -1,27 +1,45 @@
-include ../../items/number-cost/number-cost
+//-                        Options                  |               Classes
+   ------------------------------ ---------------------------------------------------------------------------
+     infoRoom - (obj)                               |   element - элементом какого блока является
+        number - (int) номер команты                |   addAnyClass - добавление свободных классов
+        lux - (bool = false) приставка к номеру     |   mode - свободный модификатор
+        sale - (string) цена за комнату в сутки     |
+     slides - (array) - массив с именами картинок   |
+              для этой карточки                     |
 
+
+
+include ../number-cost/number-cost
+include ../../items/slider/slider
 mixin hotel-number-card(options)
-    - var path = 'img/hotel-cards-photo/' + options.infoRoom.number + '/1.svg'
+    if !options
+        -
+            options = {
+                infoRoom: {
+                    number: 801,
+                    lux: true,
+                    sale: '10000'
+                },
+                path: 'img/',
+                slides: ['1.svg']
+            }
+        include description
+    - var paths = 'img/hotel-cards-photo/' + options.infoRoom.number + '/'
     - var blockName = 'hotel-number-card'
-    div.hotel-number-card
-        div(class = blockName + '__slider')
-            img(src=path)
-        div(class = blockName + '__info')
-            - var number = '№ ' + options.number
-            div(class = blockName + '__number')
-                +number-cost({
-                    number: options.infoRoom.number,
-                    sale: options.infoRoom.sale,
-                    lux: options.infoRoom.lux,
-                    star: true
-                })
+    div.hotel-number-card(class=pf.addClasses('hotel-number-card', options))
+        +slider({
+            element: blockName,
+            path: paths,
+            slides: options.slides
+        })
 
+        - var number = '№ ' + options.number
 
-+hotel-number-card({
-    infoRoom: {
-        number: 802,
-        lux: true,
-        sale: '2 000'
-    },
+        +number-cost({
+            element: blockName,
+            number: options.infoRoom.number,
+            sale: options.infoRoom.sale,
+            lux: options.infoRoom.lux,
+            star: true
+        })
 
-})

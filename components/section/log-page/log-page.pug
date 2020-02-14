@@ -1,0 +1,10 @@
+include ../../blocks/log-form/log-form
+
+mixin log-page(options)
+    - var blockName = 'log-page'
+    div.log-page(class= pf.addClasses('log-page', options))
+       +log-form({
+           element: blockName,
+           type: options.type,
+       })
+
