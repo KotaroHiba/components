@@ -15,10 +15,19 @@ mixin log-form(options)
         classes += options.mode ? ' '  + 'log-form_' + options.mode: ''
         classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
 
+
     if options.type === 'register'
-       - var title = 'Регистрация аккаунта'
+       -
+           var title = 'Регистрация аккаунта'
+           var buttonText = 'Перейти к оплате'
+           var subButtonText = 'Войти'
+           var additionalClasses = 'log-form__password'
     else
-        - var title  = 'Войти'
+        -
+            var title  = 'Войти'
+            var buttonText = 'Войти'
+            var subButtonText = 'Cоздать'
+
 
     div.log-form(class=classes)
         div.log-form__container
@@ -62,7 +71,8 @@ mixin log-form(options)
             +input-text-field({
                 element: blockName,
                 placeholder: 'Пароль',
-                type: 'password'
+                type: 'password',
+                addAnyClass: additionalClasses
             })
             if options.type === 'register'
                 div.log-form__offer
@@ -73,7 +83,7 @@ mixin log-form(options)
 
             +button({
                 element: blockName,
-                text: 'Войти',
+                text: buttonText,
                 arrow: true
             })
             - var text = options.type === 'register' ? 'Уже есть аккаунт на Toxin' : 'Нет аккаунта на Toxin?'
@@ -82,7 +92,7 @@ mixin log-form(options)
 
                 +button({
                     element: blockName,
-                    text: 'Создать',
+                    text: subButtonText,
                     invert: true
                 })
 
