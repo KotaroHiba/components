@@ -8,7 +8,7 @@
     text-transform: uppercase
 
 .dropdown
-    min-width: rem(320)
+    width: rem(320)
     
 .dropdown__list
     display: flex
@@ -22,8 +22,7 @@
     padding-bottom: rem(8)
     z-index: 1
     position: absolute
-    width: percent(322)
-    min-width: rem(318)
+    width: rem(318)
     > .dropdown__item
         margin: rem(11) 0 0 0
         padding: rem(5) rem(14) 0 0
@@ -49,6 +48,7 @@
             line-height: rem(26)
             text-align: center
         > .dropdown__circle
+            cursor: pointer
             &_inactive
                 @extend .dropdown__circle
                 color: $color-dark-25
