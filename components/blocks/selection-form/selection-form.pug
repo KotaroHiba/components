@@ -7,7 +7,7 @@ mixin selection-form(options)
     - var blockName = 'selection-form'
     .selection-form(class= pf.addClasses(blockName , options))
         .selection-form__container
-            h1.section-form__title Найдем номера под ваши желания
+            h1.selection-form__title Найдем номера под ваши пожелания
             +calendar({
                 twoInputs: true,
                 element: blockName
@@ -18,7 +18,9 @@ mixin selection-form(options)
                 element: blockName
             })
             +button({
-                element: blockName
+                element: blockName,
+                text: 'подобрать номер',
+                arrow: true
             })
 
 +selection-form({
