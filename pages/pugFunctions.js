@@ -33,6 +33,16 @@ module.exports = {
     log() {
         return console.log('Hello wolrd')
     },
+    addFormat(name, format){
+        return name + '.' + format
+    },
 
+    addFormatArr(arr, format) {
+       let names = [];
+        for (let i = 0; i < arr.length; i++){
+          names[i] = this.addFormat(arr[i], format);
+        }
+        return names;
+    }
 }
 ;

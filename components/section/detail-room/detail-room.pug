@@ -1,0 +1,87 @@
+include ../../items/advantages/advantages
+include ../../blocks/feedback-record/feedback-record
+include ../../blocks/sale-block/sale-block
+mixin detail-room(options)
+    if !options
+        - options = {}
+    - blockName = 'detail-room'
+
+    div(class= blockName)
+        div(class = blockName + '__photo-wall' class = 'photo-wall')
+            div.photo-wall__item_main
+                img(src = 'img/' + 'room1.svg')
+            div.photo-wall__item
+                img(src = 'img/' + 'room1.1.svg')
+            div.photo-wall__item
+                img(src = 'img/' + 'room1.2.svg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        div(class= blockName + '__container')
+            // инофрмация отзывы
+            div(class= blockName + '__general-information')
+                div(class= blockName + '__advantages-list')
+                    h2 Сведения о номере
+                    +advantages({
+                        element: blockName,
+                        image: 'smile.svg',
+                        heading: 'Комфорт',
+                        text: 'Шумопоглощающие стены',
+                    })
+                    +advantages({
+                        element: blockName,
+                        image: 'location_city.svg',
+                        heading: 'Удобство',
+                        text: 'Окно в каждой из спален',
+                    })
+                    +advantages({
+                        element: blockName,
+                        image: 'whatshot.svg',
+                        heading: 'Уют',
+                        text: 'Номер оснащен камином',
+                    })
+                div(class= blockName + '__impression-number' class='impression-number')
+                    //TODO @Kotaro создать блоками
+                    img(src='img/Pie.png').impression-number__circle
+                    img(src='img/Group.svg').impression-number__list
+                div(class = blockName + '__visitors')
+                    h2 Отзывы посетителей
+                    +feedback-record({
+                        image: 'img/image.svg',
+                        author: 'Мурад Сарафанов',
+                        data: '5 дней назад',
+                        text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                    })
+                    +feedback-record({
+                        image: 'img/dd43be.png',
+                        author: 'Патрисия Стёклышкова',
+                        data: 'Неделю назад',
+                        text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
+                    })
+                div(class = blockName + '__rules' class = 'rules')
+                    .rules__specific
+                        h2.rules__title Правила
+                        ul.rules__list
+                            li Нельзя с питомцами
+                            li Без вечеринок и мероприятий
+                            li Время прибытия - после 13:00, <br> а выезд до 12:00
+                    .rules__cancel
+                        h2.rules__title Отмена
+                        p.rules__text.
+                            Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            //калькулятор цен
+            div(class= blockName + '__calculator-sale')
+                +sale-block()
+
