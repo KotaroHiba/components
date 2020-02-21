@@ -30,10 +30,13 @@ var dataset = [
         color: '#ffffff'
     }  
 ];
-  
-var maxValue = 1;
+
+// Максимальное значение для корректного построения. Если больше, то рамка будет обрезана, если меньше, то будет созданно больше элементов.
+var maxValue = 25;
+// Для постройки диакграмы.
 var container = $('.pie-chart__container');
 
+// Функция для построения диаграмы.
 var addSector = function(data, startAngle, collapse) {
     var sectorDeg = 3.6 * data.value;
     var skewDeg = 90 + sectorDeg;
@@ -42,6 +45,7 @@ var addSector = function(data, startAngle, collapse) {
         skewDeg++;
     }
 
+    // Добавляем элемент с перезначеными свойствами.
     var sector = $('<div>', {
         'class': 'pie-chart__section'
     }).css({
@@ -53,6 +57,7 @@ var addSector = function(data, startAngle, collapse) {
     return startAngle + sectorDeg;
 };
 
+// Преребор массива значений.
 dataset.reduce(function (prev, curr) {
     return (function addPart(data, angle) {
         if (data.value <= maxValue) {
