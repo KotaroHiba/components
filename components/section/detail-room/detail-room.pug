@@ -7,11 +7,28 @@ mixin detail-room(options)
     - blockName = 'detail-room'
 
     div(class= blockName)
-        div(class = blockName + '__photo-wall')
-            img(src = 'img/' + 'room1.svg').photo-wall__item
-            div
-                img(src = 'img/' + 'room1.1.svg').photo-wall__item
-                img(src = 'img/' + 'room1.2.svg').photo-wall__item
+        div(class = blockName + '__photo-wall' class = 'photo-wall')
+            div.photo-wall__item_main
+                img(src = 'img/' + 'room1.svg')
+            div.photo-wall__item
+                img(src = 'img/' + 'room1.1.svg')
+            div.photo-wall__item
+                img(src = 'img/' + 'room1.2.svg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         div(class= blockName + '__container')
             // инофрмация отзывы
             div(class= blockName + '__general-information')
