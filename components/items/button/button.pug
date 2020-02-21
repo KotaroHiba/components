@@ -10,9 +10,9 @@ mixin button(options)
     if !options
         - var options = {}
     -
-        classes = ''
-        classes += options.invert ? ' button_inverted' : ''
-        classes += options.arrow ? ' button_arrow' : ''
+       var  classes = ''
+            classes += options.invert ? ' button_inverted' : ''
+            classes += options.arrow ? ' button_arrow' : ''
     .button(class=classes class=pf.addClasses('button', options))
         button.button__element= options.text || 'Button'
 

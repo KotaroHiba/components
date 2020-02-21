@@ -8,21 +8,24 @@
     text-transform: uppercase
 
 .dropdown
-    width: rem(320)
-    
+    min-width: rem(266)
+    position: relative
+
 .dropdown__list
     display: flex
+    border-bottom-left-radius: 2px
+    border-bottom-right-radius: 2px
     flex-direction: column
     justify-content: flex-start
     align-content: center
     background: #FFFFFF
-    border: 1px solid rgba(31, 32, 65, 0.5)
-    border-bottom-left-radius: 2px
-    border-bottom-right-radius: 2px
+    border: 1px solid $color-dark-25
     padding-bottom: rem(8)
     z-index: 1
     position: absolute
-    width: rem(318)
+    width: 99.3%
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05)
+    min-width: percent(264)
     > .dropdown__item
         margin: rem(11) 0 0 0
         padding: rem(5) rem(14) 0 0
@@ -79,11 +82,11 @@
 .dropdown__button
     background: #FFFFFF
     height: rem(44)
-    border: 1px solid rgba(31, 32, 65, 0.5)
+    border: 1px solid $color-dark-25
     box-sizing: border-box
     margin-bottom: -1px
-    border-top-left-radius: 2px
-    border-top-right-radius: 2px
+    border-bottom-left-radius: 2px
+    border-bottom-right-radius: 2px
     cursor: pointer
     display: flex
     flex-direction: row
@@ -97,6 +100,7 @@
         line-height: rem(24)
         flex-basis: rem(44)
         text-align: center
+        color: $color-dark-50
     > .dropdown__text
         @include font($height: rem(24), $weight: normal)
-        padding-left: 15px
+        padding-left: 14px

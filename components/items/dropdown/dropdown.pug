@@ -20,13 +20,13 @@ mixin dropdown(options)
             text = 'Сколько гостей' 
             name  = ['Взрослые', 'Дети', 'Младенцы']
             value = [0, 0, 0]
-    else 
+    else
         -
             classes = 'amenity'
             text = '2 спальни, 2 кровати...'
             name  = ['Спальни', 'Кровати', 'Ванные комнаты']
             value = [2, 2, 0]
-    .dropdown(class= classes)
+    .dropdown(class= classes class=pf.addClasses('dropdown', options))
         .dropdown__button
             .dropdown__text= text
             .dropdown__arrow keyboard_arrow_down
