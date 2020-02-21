@@ -9,14 +9,13 @@ mixin rooms-list(options)
       classes += options.mode ? ' ' + 'rooms-list_' + options.mode : ''
       classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
   - var blockName = 'rooms-list'
-  - var numberHotelNumber = options.number
 
   div.rooms-list(class=classes)
     for cards in options.cards
       +hotel-number-card({
           element: blockName,
           infoRoom: {
-              number: numberHotelNumber++,
+              number: cards.number,
               sale: cards.sale
           },
           slides: cards.slides
