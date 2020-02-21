@@ -1,5 +1,6 @@
 include ../../items/advantages/advantages
 include ../../blocks/feedback-record/feedback-record
+include ../../blocks/sale-block/sale-block
 mixin detail-room(options)
     if !options
         - options = {}
@@ -52,6 +53,18 @@ mixin detail-room(options)
                         data: 'Неделю назад',
                         text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
                     })
+                div(class = blockName + '__rules' class = 'rules')
+                    .rules__specific
+                        h2.rules__title Правила
+                        ul.rules__list
+                            li Нельзя с питомцами
+                            li Без вечеринок и мероприятий
+                            li Время прибытия - после 13:00, <br> а выезд до 12:00
+                    .rules__cancel
+                        h2.rules__title Отмена
+                        p.rules__text.
+                            Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
             //калькулятор цен
             div(class= blockName + '__calculator-sale')
+                +sale-block()
 
