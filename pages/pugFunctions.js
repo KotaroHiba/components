@@ -23,6 +23,9 @@ module.exports = {
         return classes;
     },
 
+    elem(nameBlock, nameElem) {
+        return nameBlock + '__' + nameElem
+    },
     // TODO @Kotaro возвращает параметры которые нужно передать
     helper(data) {
         let obj = {element: ''};
