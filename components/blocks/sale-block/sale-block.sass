@@ -1,67 +1,68 @@
-
-
 .sale-block
-  width: percent(380)
+  margin-left: 20px
+  margin-top: 20px
+  background: #FFFFFF
+  border: 1px solid rgba(0, 0, 0, 0.12)
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2)
+  border-radius: 4px
 
-  flex-direction: column
-  border: 2px solid black
-  min-width: 320px
+  @include  mm-wh(380)
   &__container
-    margin: 30px percent(30)
-
-
-  &__title
-    display: grid
-    grid-column-gap: percent(105)
-    grid-template-columns: auto-mm(110) auto-mm(105)
-
-
-
-  &__hotel-number
-    @include font(17px, bold, #1F2041)
-    font-family: Quicksand, sans-serif
-    text-transform: uppercase
-    span
-      @include font(15px, bold, $main-color)
-      font-size: rem(12)
-  &__sale-day
-    @include font(18px)
-    text-align: right
-    span
-      font-weight: bold
-  &__form
-    display: grid
-    grid-template-columns: 1fr 1fr
-    grid-column-gap: percent(20)
-
-
-  &__guests
-    grid-column: 1/4
-
-  &__calc
+    @include mm-wh(320)
+    margin: 44px auto 30px auto
+  &__calendar
+    margin-top: 22px
+  &__subtitle
     margin-top: 20px
-    display: grid
-    grid-template-columns: auto-mm(214) auto-mm(57)
-    grid-column-gap: percent(49)
-    @include font(24px)
-    span:nth-child(2n)
-      text-align: right
-  &__total
-    display: grid
-    grid-template-columns: auto-mm(59) auto-mm(182) auto-mm(68)
-    grid-column-gap: percent(5)
-    font-family: Quicksand, sans-serif
-    font-style: normal
-    font-weight: bold
-    font-size: rem(19)
-    line-height: 24px
-    margin-top: 30px
-    &-points
-      background: url(img/points.svg)  repeat-x bottom
-
-
+    margin-bottom: 7px
   &__button
-    margin-top: 20px
-    text-transform: uppercase
     height: 44px
+    margin-top: 20px
+  &__info-sale
+    margin-top: 20px
+  &__number-cost
+    width: 100% !important
+    font-size: 21px
+    font-family: Open-sans-bold
+.info-sale
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  &__item
+    display: flex
+    justify-content: space-between
+    font-family: Montserrat
+    font-size: 14px
+    color: rgba(31, 32, 65, 0.75)
+    margin-bottom: 16px
+    &:nth-child(3)
+      margin-bottom: 10px
+    p
+      margin: 0
+  &__text
+    @include mm-wh(214)
+    position: relative
+    &_helps
+      &::after
+        content: ''
+        min-width: 20px
+        min-height: 20px
+        position: absolute
+        top: -2px
+        right: -25px
+        background: url("img/Voskl.svg")
 
+  &__total
+    color: #1F2041
+    display: flex
+    justify-content: space-between
+    &-text
+      font-family: Open-sans-bold, sans-serif
+      font-size: 19px
+      margin-bottom: 0
+    &-points
+      flex:1 0 auto
+      background: url("img/points.svg") repeat-x
+      background-position-y: 38px
+    &-sale
+      text-transform: uppercase

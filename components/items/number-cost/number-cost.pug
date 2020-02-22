@@ -21,10 +21,10 @@ mixin number-cost(options)
             classes += options.mode ? ' '  + 'number-cost_' + options.mode: ''
             classes += options.addAnyClass ? ' ' + options.addAnyClass : ''
     -
-        var number = '№ ' + options.number
+        var number = '' + options.number
         var sale = options.sale + "Р "
     div.number-cost(class=classes)
-        div.number-cost__number= number
+        div.number-cost__number!='<p class="number-cost__number_num">№ </p>' + number
             if options.lux === true
                 span  люкс
         div.number-cost__sale= sale
