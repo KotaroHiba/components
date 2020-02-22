@@ -44,13 +44,18 @@ mixin detail-room(options)
                 div(class = blockName + '__visitors')
                     h2 Отзывы посетителей
                     +feedback-record({
-                        image: 'img/image.svg',
+                        element: blockName,
+                        image: 'img/member.png',
+                        count: 12,
+                        state: true,
                         author: 'Мурад Сарафанов',
                         data: '5 дней назад',
                         text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
                     })
                     +feedback-record({
-                        image: 'img/dd43be.png',
+                        element: blockName,
+                        count: 2,
+                        image: 'img/member2.png',
                         author: 'Патрисия Стёклышкова',
                         data: 'Неделю назад',
                         text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
