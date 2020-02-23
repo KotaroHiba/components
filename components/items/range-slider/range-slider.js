@@ -1,5 +1,4 @@
-// TODO: @misha добавить обрабление $(document).ready(function). Чтобы js работал после загрузки страницы.
-$(".range-slider__double").slider({
+$(document).ready(".range-slider__double").slider({
     range: true,
     min: 500,
     max: 16500,
