@@ -4,7 +4,9 @@
     display: flex
     //flex-wrap: wrap
     margin: 0 auto
-    width: 1440px - 280px
+    width: percent(1440 - 280)
+    @media (max-width: 1200px)
+      flex-wrap: wrap
   &__subtitle
     margin-bottom: 19px
   &__photo-wall
@@ -16,10 +18,12 @@
     margin-top: 45px
     display: flex
     flex-wrap: wrap
+    @media (max-width: 1200px)
+      justify-content: space-between
   &__advantages-list
     margin-right: 70px
   &__visitors
-    width: 100%
+    width: percent(711)
   &__calculator-sale
     margin-top: 60px
 
