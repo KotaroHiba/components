@@ -1,16 +1,26 @@
 .nav
-
     display: flex
-    justify-content: space-between
-
+    align-items: center
+    flex-flow: row wrap
     &__link
         font-family: $main-font
-        font-size: 14px
-        color: $color-dark-50
+        font-size: rem(14)
+        margin-right: rem(20)
+        color: $color-dark-75
         text-decoration: none
-        font-style: normal
-        font-weight: normal
 
-        &_drop
-            img
-                padding: 0 6px
+    > .nav_drop
+        display: flex
+        flex-flow: row nowrap
+        // align-items: center
+        > .nav_arrow 
+            align-self: center
+            font-family: Material Icons
+            font-style: normal
+            font-weight: normal
+            font-size:  rem(24)
+            line-height: rem(20)
+            text-align: center
+    
+    &:last-child
+        margin: 0
