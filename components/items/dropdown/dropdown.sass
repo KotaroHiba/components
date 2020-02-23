@@ -18,7 +18,7 @@
     flex-direction: column
     justify-content: flex-start
     align-content: center
-    background: #FFFFFF
+    background: $white
     border: 1px solid $color-dark-25
     padding-bottom: rem(8)
     z-index: 1
@@ -39,7 +39,7 @@
             padding-left: rem(15)
         > .dropdown__circle
             color: $color-dark-50
-            border: 1px solid rgba(31, 32, 65, 0.5)
+            border: 1px solid $color-dark-50
             box-sizing: border-box
             border-radius: rem(22)
             font-family: $main-font    
@@ -54,7 +54,7 @@
             &_inactive
                 @extend .dropdown__circle
                 color: $color-dark-25
-                border: 1px solid rgba(31, 32, 65, 0.25)
+                border: 1px solid $color-dark-25
         > .dropdown__count
             text-align: center
     > .dropdown__item_extra
@@ -80,7 +80,7 @@
     display: none
 
 .dropdown__button
-    background: #FFFFFF
+    background: $white
     height: rem(44)
     border: 1px solid $color-dark-25
     box-sizing: border-box
