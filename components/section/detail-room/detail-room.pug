@@ -1,6 +1,7 @@
 include ../../items/advantages/advantages
 include ../../blocks/feedback-record/feedback-record
 include ../../blocks/sale-block/sale-block
+include ../../items/rules/rules
 mixin detail-room(options)
     if !options
         - options = {}
@@ -18,7 +19,7 @@ mixin detail-room(options)
             // инофрмация отзывы
             div(class= blockName + '__general-information')
                 div(class= blockName + '__advantages-list')
-                    h2 Сведения о номере
+                    h2.detail-room__subtitle Сведения о номере
                     +advantages({
                         element: blockName,
                         image: 'smile.svg',
@@ -39,6 +40,7 @@ mixin detail-room(options)
                     })
                 div(class= blockName + '__impression-number' class='impression-number')
                     //TODO @Kotaro создать блоками
+                    h2.detail-room__subtitle Впечатления от номера
                     img(src='img/Pie.png').impression-number__circle
                     img(src='img/Group.svg').impression-number__list
                 div(class = blockName + '__visitors')
@@ -60,17 +62,10 @@ mixin detail-room(options)
                         data: 'Неделю назад',
                         text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'
                     })
-                div(class = blockName + '__rules' class = 'rules')
-                    .rules__specific
-                        h2.rules__title Правила
-                        ul.rules__list
-                            li Нельзя с питомцами
-                            li Без вечеринок и мероприятий
-                            li Время прибытия - после 13:00, <br> а выезд до 12:00
-                    .rules__cancel
-                        h2.rules__title Отмена
-                        p.rules__text.
-                            Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                +rules({
+                    element: blockName
+                })
+
             //калькулятор цен
             div(class= blockName + '__calculator-sale')
                 +sale-block()
