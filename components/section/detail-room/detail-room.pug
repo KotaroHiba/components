@@ -43,8 +43,8 @@ mixin detail-room(options)
                     h2.detail-room__subtitle Впечатления от номера
                     img(src='img/Pie.png').impression-number__circle
                     img(src='img/Group.svg').impression-number__list
-                div(class = blockName + '__visitors')
-                    h2 Отзывы посетителей
+                div(class = blockName + '__visitors visitors')
+                    h2.visitors__title Отзывы посетителей номера
                     +feedback-record({
                         element: blockName,
                         image: 'img/member.png',
