@@ -1,6 +1,4 @@
-// TODO: @misha добавить обрабление $(document).ready(function). Чтобы js работал после загрузки страницы.
-
-$(function(){
+$(document).ready(function(){
     $('.like-button').click(function (e, changeState) {
         if (changeState === undefined) {
             $(this).toggleClass('like-button-on');
