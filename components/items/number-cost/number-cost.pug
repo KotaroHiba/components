@@ -30,11 +30,11 @@ mixin number-cost(options)
         div.number-cost__sale= sale
             span в сутки
         if options.star === true
-            div.number-cost__line
+            hr.number-cost__line
             +rate-button({
                 element: 'number-cost'
             })
-            div.number-cost__sale= '145 '
+            div.number-cost__review= '145 '
                 span Отзывов
 
 

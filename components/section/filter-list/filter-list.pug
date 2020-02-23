@@ -17,7 +17,7 @@ mixin filter-list(options)
 
   div.filter-list(class= classes)
     .filter-list__date-and-guests-number.filter-list__interior-conteiner
-        h3.filter-list__heading Даты пребывания в отеле
+        h3.filter-list__heading.filter-list__heading_date Даты пребывания в отеле
         +calendar()
 
         h3.filter-list__heading.filter-list__heading_guests Гости
@@ -66,4 +66,25 @@ mixin filter-list(options)
         })
 
     .filter-list__more-facilities.filter-list__interior-conteiner
-        h3.filter-list__heading Дополнительные удобства
+        details.bullet-list.filter-list__bullet-list
+          summary.bullet-list__heading Дополнительные удобства
+          +input-checkbox({
+              element: "bullet-list",
+              checkbox: [
+                  {info: 'Завтрак'},
+
+                  {info: 'Письменный стол'},
+
+                  {info: "Стул для кормления"},
+
+                  {info: 'Кроватка'},
+
+                  {info: 'Телевизор'},
+
+                  {info: 'Шампунь'},
+
+                  {info: 'Телевизор'},
+
+                  {info: 'Шампунь'},
+              ],
+          })
