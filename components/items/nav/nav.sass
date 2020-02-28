@@ -5,22 +5,26 @@
     &__link
         font-family: $main-font
         font-size: rem(14)
-        margin-right: rem(20)
+        margin-right: 1.3rem
         color: $color-dark-75
         text-decoration: none
+
+        &:last-child
+            margin: 0 0 0 -1px
 
     > .nav_drop
         display: flex
         flex-flow: row nowrap
         // align-items: center
-        > .nav_arrow 
+        > .nav_arrow
             align-self: center
             font-family: Material Icons
+            color: $color-dark-50
             font-style: normal
             font-weight: normal
             font-size:  rem(24)
-            line-height: rem(20)
+            line-height: 0
             text-align: center
-    
-    &:last-child
-        margin: 0
+            width: 23px
+            margin: 3px 0 0 1px
+

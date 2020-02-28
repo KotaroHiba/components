@@ -80,7 +80,7 @@
       position: absolute
       top: 0
       left: 0
-      z-index: 1
+      z-index: 101
       transform: translateX(-110vw)
       flex-direction: column
       width: 100vw
@@ -126,7 +126,7 @@
   display: none
 
   @media screen and (max-width: 550px)
-    z-index: 2
+    z-index: 102
     display: block
     position: relative
     width: 60px
@@ -136,9 +136,8 @@
 @media screen and (max-width: 550px)
   .header__button-display-nav
 
-    z-index: 1
+    z-index: 102
     transition-duration: 10s
-    position: relative
     position: absolute
     bottom: 20px
     right: 10px

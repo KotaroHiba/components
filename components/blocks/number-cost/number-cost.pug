@@ -14,9 +14,11 @@ mixin number-cost(options)
         var number = '' + options.number
         var sale = options.sale + "Р "
     div.number-cost(class=pf.addClasses('number-cost', options))
-        div.number-cost__number!='<p class="number-cost__number_num">№ </p>' + number
-            if options.lux === true
-                span  люкс
+        div.number-cost__number
+            p.number-cost__number_sign №
+                span.number-cost__number_num  #{number}
+                if options.lux === true
+                    span.number-cost__number_lux  люкс
         div.number-cost__sale= sale
             span в сутки
         if options.star === true

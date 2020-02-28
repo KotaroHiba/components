@@ -17,10 +17,18 @@
     font-size: 14px
     color: $color-title
 
-    span
+    &_sign
+      margin-top: 0
+
+    &_num
+      font-size: 18.5px
+      margin-left: -1px
+
+    &_lux
       @include font(15px, bold, $main-color)
       font-size: rem(12)
-      font-weight: normal
+      font-weight: bold
+      margin-left: 2px
 
   &__sale
     @include font(18px)
