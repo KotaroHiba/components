@@ -1,8 +1,9 @@
 meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2.0")
-include ../components/items/advantages/advantages
-+advantages({
-    element: blockName,
-    image: 'smile.svg',
-    heading: 'Комфорт',
-    text: 'Шумопоглощающие стены',
-})
+include ../components/items/slider/slider
+
+div.table
+    +slider({
+        element: 'table',
+        path: 'img/',
+        slides: ['1.svg', '2.svg']
+    })

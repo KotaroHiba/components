@@ -5,11 +5,13 @@
   &__target
     position: absolute
     display: flex
-    bottom: 15px
+    bottom: 32px
     right: 15px
+    z-index: 100
 
     &-circle
-      @include mm-wh(7, 7)
+      width: 5.3px
+      height: 5.5px
       border: 1px solid $white
       border-radius: 100%
       margin-left: 4px
@@ -18,12 +20,13 @@
       &.active
         background: $white
 
-  &__prev
-    z-index: 100
-
   &__next
-    z-index: 100
     justify-items: end
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
+    justify-self: end
+
+    i
+      padding-right: 10px
 
   &__next, &__prev
     font-family: "Material Icons", sans-serif
@@ -33,7 +36,17 @@
     display: grid
     grid-template-columns: 1fr
     align-items: center
-    height: 100%
+    height: 82%
+    width: 30%
+    z-index: 99
+    margin-top: -2px
+    border-radius: 3px
+
+  &__prev
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
+
+    i
+      padding-left: 10px
 
   &__viewport
     display: grid
@@ -54,6 +67,7 @@
       width: 100%
       height: 100%
       object-fit: cover
+      border-radius: 5px
 
     &.active
       display: block
