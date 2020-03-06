@@ -1,1 +1,1 @@
-mixin menu(options)  -    var classes = "menu"        classes += options.element ? " menu__" + options.element : ""  section(class= classes)    span.menu__logo    p.menu__text Меню
+mixin menu(options)  if !options    -options = {}  -    var classes = "menu"        classes += options.element ? " " + options.element + "__menu": ""  section(class= classes)    span.menu__logo    p.menu__text Меню
