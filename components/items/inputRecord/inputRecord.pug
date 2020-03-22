@@ -1,0 +1,1 @@
+mixin inputRecord(options)  if !options    -options = {}  -    var classes = "inputRecord"        classes += options.element ? " " + options.element + "__inputRecord" : ""  div(class= classes)    label.inputRecord__signature      input.inputRecord__field(type= options.type placeholder= options.text)

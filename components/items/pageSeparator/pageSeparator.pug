@@ -1,0 +1,1 @@
+mixin pageSeparator(textSeparator, options)  if !options    -options = {}  -    var classes = "pageSeparator"        classes += options.element ? " " + options.element + "__pageSeparator" : ""  section(class= classes)    span.pageSeparator__number #{textSeparator}    hr.pageSeparator__separator
